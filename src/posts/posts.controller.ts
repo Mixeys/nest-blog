@@ -19,7 +19,7 @@ export class PostsController {
   constructor(private readonly postsService: PostsService) {}
 
   @Get()
-  getPosts(@Query() getPostDto: GetPostDto) {
+  getPosts(@Query() getPostDto: GetPostDto): Promise<PostEntity[]> {
     return this.postsService.getPosts(getPostDto);
   }
 

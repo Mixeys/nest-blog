@@ -9,8 +9,8 @@ import { Post } from './post.entity';
 export class PostsService {
   constructor(private readonly postRepository: PostRepository) {}
 
-  getPosts(getPostDto: GetPostDto) {
-    return this.postRepository.find();
+  getPosts(getPostDto: GetPostDto): Promise<Post[]> {
+    return this.postRepository.getPosts(getPostDto);
   }
 
   async getPost(id: string): Promise<Post[]> {
