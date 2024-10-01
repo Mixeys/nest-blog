@@ -8,4 +8,6 @@ export class CreatePostDto {
   readonly title: string;
   @IsEnum(PostStatus)
   readonly status: PostStatus;
+  @IsString()
+  readonly categoryId: string;
 }
